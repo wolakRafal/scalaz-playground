@@ -10,7 +10,6 @@ object FunctorExamples extends App {
     def map[A,B](fa: F[A])(f: A => B): F[B]
   }
 
-
   // Applicatve
   trait Applicative[F[_]] extends Apply[F] {
     // this is constructor
@@ -19,6 +18,7 @@ object FunctorExamples extends App {
     def pure[A](a: => A): F[A] = point(a)
 
   }
+
 
   trait Apply[F[_]] extends Functor[F] {
 //    <*> takes a functor that has a function in it and another functor
